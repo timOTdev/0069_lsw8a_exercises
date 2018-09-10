@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-
 
 class App extends Component {
   render() {
@@ -30,7 +28,7 @@ class App extends Component {
         <ul>
           <li>
             <Link to={`${match.url}/rendering`}>
-              Rendering with React
+              Rendering
             </Link>
           </li>
           <li>
@@ -40,12 +38,12 @@ class App extends Component {
           </li>
           <li>
             <Link to={`${match.url}/props-v-state`}>
-              Props v. State
+              Props vs State
             </Link>
           </li>
         </ul>
-    
-        <Route path={`${match.path}/:topicId`} component={Topic}/>
+
+        <Route path={`${match.path}/:topicId`} component={Topic} />
         <Route exact path={match.path} render={() => (
           <h3>Please select a topic.</h3>
         )}/>
@@ -60,16 +58,14 @@ class App extends Component {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/topics">Topics</Link></li>
           </ul>
-    
-          <hr/>
-    
-          <Route exact path="/" component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/topics" component={Topics}/>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/topics" component={Topics} />
         </div>
       </BrowserRouter>
-    );
+    )
   }
 }
 
-export default App;
+export default App
